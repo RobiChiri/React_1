@@ -1,9 +1,12 @@
-import { FocusableInput } from "./FocusableInput";
+import { StrictMode } from "./StrictMode";
+import { StrictModeComponent } from "./StrictModeComponent";
 
 export function App() {
   return (
     <div>
-      <FocusableInput />
+      <StrictMode>
+        <StrictModeComponent />
+      </StrictMode>
     </div>
   );
 }
