@@ -1,9 +1,13 @@
-import { Welcome } from "./Welcome";
+import { AlertClock } from "./AlertClock";
 
 export function App() {
+  function handleButtonClick() {
+    const now = new Date();
+    alert(now.toLocaleTimeString());
+  }
   return (
     <div>
-      <Welcome name={<strong>Robi</strong>} age={20} />
+      <AlertClock eventHandler={handleButtonClick} />
     </div>
   );
 }
