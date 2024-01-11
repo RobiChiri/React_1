@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function Login() {
+export function Login(props) {
   const [data, setData] = useState({
     username: "",
     password: "",
@@ -19,6 +19,11 @@ export function Login() {
         [name]: type == "checkbox" ? checked : value,
       };
     });
+  }
+
+  function handleLoginClick() {
+    // eslint-disable-next-line react/prop-types
+    props.onLogin(data);
   }
 
   return (
@@ -41,6 +46,12 @@ export function Login() {
         checked={data.session}
         onChange={handleChangeInputData}
       />
+      <button
+        disabled={!data.username || !data.password}
+        onClick={handleLoginClick}
+      >
+        Login
+      </button>
     </div>
   );
 }
