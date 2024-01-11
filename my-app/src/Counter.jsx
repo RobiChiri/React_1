@@ -1,13 +1,20 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { CounterDisplay } from "./CounterDisplay";
 
 // eslint-disable-next-line react/prop-types
 export function Counter({ initialValue, increment, decrement }) {
   const [counter, setCounter] = useState(initialValue);
 
+  const prevDirectionRef = useRef(null);
+
   useEffect(() => {
-    console.log(`the current value of counter is ${counter} `);
-  }, [counter]);
+    console.log(`The current value is ${counter}`);
+    const newDirection = counter > initialValue ? "up" : "down";
+    if (newDirection !== prevDirectionRef.current) {
+      console.log(newDirection);
+      prevDirectionRef.current = newDirection;
+    }
+  }, [counter, initialValue]);
 
   function handleCounterIncrement() {
     setCounter((c) => c + increment);

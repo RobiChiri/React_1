@@ -1,12 +1,8 @@
-import { StrictMode } from "./StrictMode";
-import { StrictModeComponent } from "./StrictModeComponent";
-
+import { Counter } from "./Counter";
 export function App() {
   return (
     <div>
-      <StrictMode>
-        <StrictModeComponent />
-      </StrictMode>
+      <Counter initialValue={0} increment={1} decrement={1} />
     </div>
   );
 }
