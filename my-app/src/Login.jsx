@@ -21,7 +21,8 @@ export function Login(props) {
     });
   }
 
-  function handleLoginClick() {
+  function handleLoginClick(event) {
+    event.preventDefault();
     // eslint-disable-next-line react/prop-types
     props.onLogin(data);
   }
@@ -37,30 +38,28 @@ export function Login(props) {
   return (
     <div>
       <h1>Login</h1>
-      <input
-        name="username"
-        value={data.username}
-        onChange={handleChangeInputData}
-      />
-      <input
-        name="password"
-        type="password"
-        value={data.password}
-        onChange={handleChangeInputData}
-      />
-      <input
-        name="session"
-        type="checkbox"
-        checked={data.session}
-        onChange={handleChangeInputData}
-      />
-      <button
-        disabled={!data.username || !data.password}
-        onClick={handleLoginClick}
-      >
-        Login
-      </button>
-
+      <form onSubmit={handleLoginClick}>
+        <input
+          name="username"
+          value={data.username}
+          onChange={handleChangeInputData}
+        />
+        <input
+          name="password"
+          type="password"
+          value={data.password}
+          onChange={handleChangeInputData}
+        />
+        <input
+          name="session"
+          type="checkbox"
+          checked={data.session}
+          onChange={handleChangeInputData}
+        />
+        <button type="submit" disabled={!data.username || !data.password}>
+          Login
+        </button>
+      </form>
       <button onClick={handleReset}>Reset</button>
     </div>
   );
