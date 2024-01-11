@@ -1,15 +1,9 @@
-import { Hello } from "./Hello";
-import { Message } from "./Message";
+import { Welcome } from "./Welcome";
 
 export function App() {
   return (
     <div>
-      <Hello />
-      <Hello />
-      <Message />
+      <Welcome name="Robi" />
     </div>
   );
 }
-
-// il programma funziona regolarmente, è possibile utilizzre più volte lo stesso componente Hello
-// ed è possibile renderizzare Message direttamente in App
