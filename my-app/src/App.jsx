@@ -1,9 +1,9 @@
-import { MouseClicker } from "./MouseClicker";
+import { InteractiveWelcome } from "./InteractiveWelcome";
 
 export function App() {
   return (
     <div>
-      <MouseClicker />
+      <InteractiveWelcome />
     </div>
   );
 }
