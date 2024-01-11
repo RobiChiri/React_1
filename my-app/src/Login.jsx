@@ -26,6 +26,14 @@ export function Login(props) {
     props.onLogin(data);
   }
 
+  function handleReset() {
+    setData({
+      username: "",
+      password: "",
+      session: false,
+    });
+  }
+
   return (
     <div>
       <h1>Login</h1>
@@ -52,6 +60,8 @@ export function Login(props) {
       >
         Login
       </button>
+
+      <button onClick={handleReset}>Reset</button>
     </div>
   );
 }
