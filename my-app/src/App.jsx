@@ -1,13 +1,9 @@
-import { AlertClock } from "./AlertClock";
+import { Counter } from "./Counter";
 
 export function App() {
-  function handleButtonClick() {
-    const now = new Date();
-    alert(now.toLocaleTimeString());
-  }
   return (
     <div>
-      <AlertClock eventHandler={handleButtonClick} />
+      <Counter initialValue={0} increment={3} />
     </div>
   );
 }
