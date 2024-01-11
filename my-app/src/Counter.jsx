@@ -1,9 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CounterDisplay } from "./CounterDisplay";
 
 // eslint-disable-next-line react/prop-types
 export function Counter({ initialValue, increment, decrement }) {
   const [counter, setCounter] = useState(initialValue);
+
+  useEffect(() => {
+    console.log(`the current value of counter is ${counter} `);
+  }, [counter]);
 
   function handleCounterIncrement() {
     setCounter((c) => c + increment);
