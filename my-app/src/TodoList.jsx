@@ -14,6 +14,10 @@ export function TodoList() {
     setInputValue("");
   }
 
+  function handleResetButtonClick() {
+    setTodos([]);
+  }
+
   return (
     <div>
       <h1>Todo List</h1>
@@ -24,6 +28,7 @@ export function TodoList() {
       </ul>
       <input value={inputValue} onChange={handleInputChange} />
       <button onClick={handleButtonClick}>Add item</button>
+      <button onClick={handleResetButtonClick}>Reset</button>
     </div>
   );
 }
