@@ -2,3 +2,13 @@
     background-color: azure;
     border: 2px solid green;
 }
+
+.app{
+    background-color: #fff;
+    border: 2px solid red;
+}
+
+.app-title{
+    font-size: 24px;
+    font-weight: bold;
+}

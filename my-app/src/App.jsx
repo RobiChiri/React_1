@@ -1,8 +1,8 @@
-import { Welcome } from "./Welcome";
+import { Container } from "./Container";
 export function App() {
   return (
     <div>
-      <Welcome name="Robi" age={20} />
+      <Container title={"Container exercise title"}>child</Container>
     </div>
   );
 }
