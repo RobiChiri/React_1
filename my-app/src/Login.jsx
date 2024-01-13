@@ -1,66 +1,31 @@
-import { useState } from "react";
+import { useForm } from "./useForm";
 
-export function Login(props) {
-  const [data, setData] = useState({
-    username: "",
-    password: "",
-    session: false,
-  });
-
-  function handleChangeInputData(event) {
-    const name = event.target.name;
-    const value = event.target.value;
-    const checked = event.target.checked;
-    const type = event.target.type;
-
-    setData((d) => {
-      return {
-        ...d,
-        [name]: type == "checkbox" ? checked : value,
-      };
-    });
-  }
-
-  function handleLoginClick(event) {
-    event.preventDefault();
-    // eslint-disable-next-line react/prop-types
-    props.onLogin(data);
-  }
-
-  function handleReset() {
-    setData({
-      username: "",
-      password: "",
-      session: false,
-    });
-  }
+export function Login() {
+  const { username, password, session, onDataChange, onSubmit, onReset } =
+    useForm();
 
   return (
     <div>
-      <h1>Login</h1>
-      <form onSubmit={handleLoginClick}>
-        <input
-          name="username"
-          value={data.username}
-          onChange={handleChangeInputData}
-        />
+      <form onSubmit={onSubmit}>
+        <input name="username" value={username} onChange={onDataChange} />
         <input
           name="password"
           type="password"
-          value={data.password}
-          onChange={handleChangeInputData}
+          value={password}
+          onChange={onDataChange}
         />
         <input
           name="session"
           type="checkbox"
-          checked={data.session}
-          onChange={handleChangeInputData}
+          checked={session}
+          onChange={onDataChange}
         />
-        <button type="submit" disabled={!data.username || !data.password}>
+        <button disabled={!username || !password} type="submit">
           Login
         </button>
+
+        <button onClick={onReset}>Reset</button>
       </form>
-      <button onClick={handleReset}>Reset</button>
     </div>
   );
 }
