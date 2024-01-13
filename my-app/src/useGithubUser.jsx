@@ -23,5 +23,5 @@ export function useGithubUser(username) {
     fetchGithubUser(username);
   }, [username]);
 
-  return { data, loading, error };
+  return { data, loading, error, fetchGithubUser };
 }
