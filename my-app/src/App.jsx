@@ -1,9 +1,9 @@
-import { GithubUser } from "./GithubUser";
+import { CurrentLocation } from "./CurrentLocation";
 
 export function App() {
   return (
     <div>
-      <GithubUser username="RobiChiri" />
+      <CurrentLocation />
     </div>
   );
 }
