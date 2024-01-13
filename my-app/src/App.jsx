@@ -1,9 +1,9 @@
-import { Login } from "./Login";
+import { GithubUser } from "./GithubUser";
 
 export function App() {
   return (
     <div>
-      <Login />
+      <GithubUser username="RobiChiri" />
     </div>
   );
 }
