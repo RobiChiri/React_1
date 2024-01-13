@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 export function GithubUserList() {
@@ -27,6 +27,8 @@ export function GithubUserList() {
           </li>
         ))}
       </ul>
+
+      <Outlet />
     </div>
   );
 }

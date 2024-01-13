@@ -7,8 +7,10 @@ export function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<div>Home</div>} />
-        <Route path="/users" element={<GithubUserList />} />
-        <Route path="/users/:username" element={<ShowGithubUser />} />
+        <Route path="/users" element={<GithubUserList />}>
+          <Route index element={<div>Add a user and select it</div>} />
+          <Route path=":username" element={<ShowGithubUser />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
