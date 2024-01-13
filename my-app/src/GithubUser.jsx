@@ -1,9 +1,12 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
-export function GithubUser({ username }) {
+import { useParams } from "react-router-dom";
+export function GithubUser() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState();
+
+  const { username } = useParams();
 
   async function fetchGithubUser(username) {
     setLoading(true);
