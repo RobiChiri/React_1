@@ -7,8 +7,9 @@ export function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<div>Home</div>} />
-        <Route path="/users" element={<GithubUserList />} />
-        <Route path="/users/:username" element={<ShowGithubUser />} />
+        <Route path="/users" element={<GithubUserList />}>
+          <Route path=":username" element={<ShowGithubUser />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
