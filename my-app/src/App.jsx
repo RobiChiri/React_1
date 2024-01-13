@@ -1,23 +1,15 @@
-import { Welcome } from "./Welcome";
-import { Login } from "./Login";
-import { CurrentLocation } from "./CurrentLocation";
-import { Counter } from "./Counter";
-
-import { Routes, Route } from "react-router-dom";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ShowGithubUser } from "./ShowGithubUser";
+import { GithubUserList } from "./GithubUserList";
 
 export function App() {
   return (
-    <div>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Welcome name="Robi" />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/CurrentLocation" element={<CurrentLocation />} />
-          <Route path="/counter" element={<Counter />} />
-          <Route path="*" element={<p>Not found</p>} />
-        </Routes>
-      </Router>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<div>Home</div>} />
+        <Route path="/users" element={<GithubUserList />} />
+        <Route path="/users/:username" element={<ShowGithubUser />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
