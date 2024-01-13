@@ -1,9 +1,9 @@
-import { GithubUsers } from "./GithubUsers";
+import { Counter } from "./Counter";
 
 export function App() {
   return (
     <div>
-      <GithubUsers />
+      <Counter />
     </div>
   );
 }
