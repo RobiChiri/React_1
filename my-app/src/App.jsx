@@ -15,6 +15,7 @@ export function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/CurrentLocation" element={<CurrentLocation />} />
           <Route path="/counter" element={<Counter />} />
+          <Route path="*" element={<p>Not found</p>} />
         </Routes>
       </Router>
     </div>
